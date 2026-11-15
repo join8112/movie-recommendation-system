@@ -1,3 +1,6 @@
+// Set your own TMDb API key here (https://www.themoviedb.org/settings/api)
+const TMDB_API_KEY = 'YOUR_TMDB_API_KEY';
+
 $(function() {
   // Button will be disabled until we type anything inside the input field
   const source = document.getElementById('autoComplete');
@@ -12,7 +15,7 @@ $(function() {
   source.addEventListener('input', inputHandler);
 
   $('.movie-button').on('click',function(){
-    var my_api_key = '8306a2c064c0db7202d1d0970f58dd0c';
+    var my_api_key = TMDB_API_KEY;
     var title = $('.movie').val();
     if (title=="") {
       $('.results').css('display','none');
@@ -26,7 +29,7 @@ $(function() {
 
 // will be invoked when clicking on the recommended movies
 function recommendcard(e){
-  var my_api_key = '8306a2c064c0db7202d1d0970f58dd0c';
+  var my_api_key = TMDB_API_KEY;
   var title = e.getAttribute('title'); 
   load_details(my_api_key,title);
 }
